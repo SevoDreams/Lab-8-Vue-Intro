@@ -1,0 +1,1 @@
+The warning “Property ... was accessed during render but is not defined on instance.” Is telling you that you’re utilizing a property in the html despite it having yet to be defined in the script. Maybe you knew that you were going to use this property so you preemptively use it without actually defining what it is

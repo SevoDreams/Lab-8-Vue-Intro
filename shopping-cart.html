@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      table {
+        border: 2px black solid;
+      }
+
+      td,
+      th {
+        width: 25%;
+        text-align: center;
+        border: 1px black solid;
+      }
+    </style>
+    <title>Shopping Cart</title>
+  </head>
+  <body>
+    <div id="app">
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+
+        <tr>
+          <td>{{ name }}</td>
+          <td>{{ unitPrice }}</td>
+          <td>
+            <input type="number" v-model="quantity" />
+          </td>
+          <td>${{ total }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      let app = Vue.createApp({
+        data() {
+          return {
+            name: "IPhone",
+            quantity: 1,
+            unitPrice: 777,
+          };
+        },
+        methods: {},
+        computed: {
+          total() {
+            return (this.quantity * this.unitPrice).toFixed(2);
+          },
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
